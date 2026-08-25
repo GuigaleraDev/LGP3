@@ -45,14 +45,16 @@ public class InMemoryEstoqueService implements IEstoqueService {
 
     @Override
     public void liberar(Pedido pedido) {
-        List<ItemPedido> itens = pedido.getItens();
+      //  List<ItemPedido> itens = pedido.getItens();
 
-        for (ItemPedido item: itens) {
+    //    for (ItemPedido item: itens) {
 
-            Produto produto item.getProduto();
-            int disponivel = this.quantidadeDisponivel(item.getProduto());
-            this.estoque.put(produto.getId(),disponivel + item.getQuantidade());
-            
+   //         Produto produto item.getProduto();
+   //         int disponivel = this.quantidadeDisponivel(item.getProduto());
+   //         this.estoque.put(produto.getId(),disponivel + item.getQuantidade());
+
+            for(ItemPedido item : pedigo.getItens()){
+                this.adicionarEstoque(item.getProduto(),item.getQuantidade());
         }
         }
     }
