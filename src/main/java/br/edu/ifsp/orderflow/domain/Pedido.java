@@ -4,6 +4,9 @@ import java.util.UUID;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import br.edu.ifsp.orderflow.domain.Cliente;
+import br.edu.ifsp.orderflow.domain.ItemPedido;
+import br.edu.ifsp.orderflow.domain.EStatusPedido;
 
 
 public class Pedido {
@@ -38,6 +41,9 @@ public class Pedido {
         this.status = EStatusPedido.PAGO;
     }
 
+    public String getId(){
+        return id;
+    }
     public Cliente getCliente() {
         return cliente;
     }
@@ -50,6 +56,10 @@ public class Pedido {
         return status;
     }
 
+    public String getIdCurto(){
+        return this.id.substring(0,8);
+    }
+
     public void cancelar (){
         this.status = EStatusPedido.CANCELADO;
 
@@ -57,7 +67,7 @@ public class Pedido {
 
     @Override
     public String toString() {
-        return "Pedido{" + this.id + "," + this.status + "," + this.calcularTotal() + "]";
+        return "Pedido{" + this.getIdCurto() + "," + this.status + "," + this.calcularTotal() + "]";
     }
 }
 

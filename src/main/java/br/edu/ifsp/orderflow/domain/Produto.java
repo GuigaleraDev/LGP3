@@ -1,4 +1,5 @@
 package br.edu.ifsp.orderflow.domain;
+
 import java.math.BigDecimal;
 
 public class Produto {
@@ -7,7 +8,6 @@ public class Produto {
     private final String nome;
     private final BigDecimal preco;
 
-
     public Produto(String id, String nome, BigDecimal preco) {
         this.id = id;
         this.nome = nome;
@@ -15,19 +15,19 @@ public class Produto {
     }
 
     public String getId() {
-        return id;
+        return this.id;
     }
 
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
     public BigDecimal getPreco() {
-        return preco;
+        return this.preco;
     }
 
     @Override
     public String toString() {
-        return this.nome + " (R$ " + this.preco +")";
+        return this.nome + " (R$ " + this.preco + ")";
     }
 }
